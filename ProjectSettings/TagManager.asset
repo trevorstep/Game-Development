@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags: []
   layers:
   - Default
@@ -41,3 +41,20 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Backdrop
+    uniqueID: 2529264907
+    locked: 0
+  - name: Floor
+    uniqueID: 1809164249
+    locked: 0
+  - name: Ground Level
+    uniqueID: 1384825203
+    locked: 0
+  - name: Mid Level
+    uniqueID: 2053446081
+    locked: 0
+  - name: Overhang Level
+    uniqueID: 4015956409
+    locked: 0
+  m_RenderingLayers:
+  - Default

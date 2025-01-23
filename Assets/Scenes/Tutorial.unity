@@ -477,6 +477,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3490362792386834848, guid: c0d2e27603f8c44f7b467c9711057356, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490362792386834848, guid: c0d2e27603f8c44f7b467c9711057356, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1384825203
+      objectReference: {fileID: 0}
+    - target: {fileID: 3941329258654534000, guid: c0d2e27603f8c44f7b467c9711057356, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3941329258654534000, guid: c0d2e27603f8c44f7b467c9711057356, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 2053446081
+      objectReference: {fileID: 0}
     - target: {fileID: 4013220803199916416, guid: c0d2e27603f8c44f7b467c9711057356, type: 3}
       propertyPath: m_Name
       value: Tank
