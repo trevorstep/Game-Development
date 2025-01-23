@@ -16,7 +16,7 @@ public class TileArrayGenerator : MonoBehaviour
     void Start()
     {   
         GenerateDefaultMapData();
-        mapData = GetComponent<MapData>().map1;
+        mapData = GetComponent<MapData>().map4;
         rows = mapData.GetLength(0);
         columns = mapData.GetLength(1);
         GenerateTileArray();
