@@ -3,7 +3,7 @@ using System.Collections;
 public class TankController : MonoBehaviour 
 {
     void start(){
-        Vector3.position = new Vector3(-2,-1,0); //this should be changed later to take the vector3 of an empty spawn point
+        transform.position = new Vector3(-2,-1,0); //this should be changed later to take the vector3 of an empty spawn point
     }
     void Update(){
         if(Input.GetKeyDown("Left")){
