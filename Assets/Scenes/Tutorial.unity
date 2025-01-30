@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 569572436}
   - component: {fileID: 569572435}
   - component: {fileID: 569572434}
+  - component: {fileID: 569572438}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -266,13 +267,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 569572433}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &569572438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569572433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f088f9ec5115b46b7a6e675e5e325aab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1672377349}
 --- !u!1 &1141983131
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,6 +366,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0db70c4dd9542415b99e1de789451edb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationSpeed: 300
+  moveSpeed: 5
 --- !u!50 &1672377354
 Rigidbody2D:
   serializedVersion: 5
@@ -379,8 +395,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &1672377355
-BoxCollider2D:
+--- !u!58 &1672377358
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -414,17 +430,7 @@ BoxCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.19, y: 1.13}
-    newSize: {x: 1.19, y: 1.13}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1.19, y: 1.13}
-  m_EdgeRadius: 0
+  m_Radius: 0.595
 --- !u!1001 &1696866175
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -510,10 +516,10 @@ PrefabInstance:
       addedObject: {fileID: 1672377350}
     - targetCorrespondingSourceObject: {fileID: 4013220803199916416, guid: c0d2e27603f8c44f7b467c9711057356, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1672377355}
+      addedObject: {fileID: 1672377354}
     - targetCorrespondingSourceObject: {fileID: 4013220803199916416, guid: c0d2e27603f8c44f7b467c9711057356, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1672377354}
+      addedObject: {fileID: 1672377358}
     - targetCorrespondingSourceObject: {fileID: 3816062444738261010, guid: c0d2e27603f8c44f7b467c9711057356, type: 3}
       insertIndex: -1
       addedObject: {fileID: 555225594}
@@ -522,6 +528,6 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 569572437}
   - {fileID: 1141983133}
+  - {fileID: 569572437}
   - {fileID: 1696866175}
