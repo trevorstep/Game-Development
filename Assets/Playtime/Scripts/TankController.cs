@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class TankController : MonoBehaviour
 {
     public float rotationSpeed = 300f;
     public float moveSpeed = 5f;

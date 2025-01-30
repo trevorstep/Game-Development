@@ -3,14 +3,28 @@ using UnityEngine;
 public class TileArrayGenerator : MonoBehaviour
 {
     [Header("Tile Prefabs")]
-    public GameObject tile1; // First tile prefab
-    public GameObject tile2; // Second tile prefab
+    public GameObject tile1;
+    public GameObject tile2;
+    public GameObject tile3;
+    public GameObject tile4;
+    public GameObject tile5;
+    public GameObject tile6;
+    public GameObject tile7;
+    public GameObject tile8;
+    public GameObject tile9;
+    public GameObject tile10;
+    public GameObject tile11;
+    public GameObject tile12;
+    public GameObject tile13;
+    public GameObject tile14;
+    public GameObject tile15;
+    public GameObject tile16;
 
     [Header("Grid Settings")]
-    public int rows; // Number of rows in the grid
-    public int columns; // Number of columns in the grid
-    public float tileSpacing = 1.0f; // Spacing between tiles
-    private GameObject[,] tileArray; // 2D array to hold the tile objects
+    public int rows;
+    public int columns;
+    public float tileSpacing = 1.0f;
+    private GameObject[,] tileArray;
     public int [,] mapData;
 
     void Start()
@@ -32,14 +46,13 @@ public class TileArrayGenerator : MonoBehaviour
         {
             for (int col = 0; col < columns; col++)
             {
-                // Set border tiles to tile2 and inner tiles to tile1
                 if (row == 0 || row == rows - 1 || col == 0 || col == columns - 1)
                 {
-                    mapData[row, col] = 1; // Use tile2 for borders
+                    mapData[row, col] = 1;
                 }
                 else
                 {
-                    mapData[row, col] = 0; // Use tile1 for inner tiles
+                    mapData[row, col] = 0;
                 }
             }
         }
@@ -47,27 +60,32 @@ public class TileArrayGenerator : MonoBehaviour
 
     void GenerateTileArray()
     {
-        // Initialize the array
         tileArray = new GameObject[rows, columns];
 
-        // Calculate the starting position of the grid
         Vector2 startPosition = new Vector2(-columns / 2.0f * tileSpacing, -rows / 2.0f * tileSpacing);
 
-        // Loop through rows and columns to instantiate tiles based on mapData
         for (int row = 0; row < rows; row++)
         {
             for (int col = 0; col < columns; col++)
             {
-                // Determine the position of the tile
                 Vector2 position = startPosition + new Vector2(col * tileSpacing, row * tileSpacing);
-
-                // Choose a tile prefab based on mapData
-                GameObject tilePrefab = mapData[rows-row-1, col] == 0 ? tile1 : tile2;
-
-                // Instantiate the tile and set its parent to this object
+                GameObject tilePrefab=tile1;
+                if(mapData[rows-row-1, col]==1){tilePrefab=tile2;}
+                if(mapData[rows-row-1, col]==2){tilePrefab=tile3;}
+                if(mapData[rows-row-1, col]==3){tilePrefab=tile4;}
+                if(mapData[rows-row-1, col]==4){tilePrefab=tile5;}
+                if(mapData[rows-row-1, col]==5){tilePrefab=tile6;}
+                if(mapData[rows-row-1, col]==6){tilePrefab=tile7;}
+                if(mapData[rows-row-1, col]==7){tilePrefab=tile8;}
+                if(mapData[rows-row-1, col]==8){tilePrefab=tile9;}
+                if(mapData[rows-row-1, col]==9){tilePrefab=tile10;}
+                if(mapData[rows-row-1, col]==10){tilePrefab=tile11;}
+                if(mapData[rows-row-1, col]==11){tilePrefab=tile12;}
+                if(mapData[rows-row-1, col]==12){tilePrefab=tile13;}
+                if(mapData[rows-row-1, col]==13){tilePrefab=tile14;}
+                if(mapData[rows-row-1, col]==14){tilePrefab=tile15;}
+                if(mapData[rows-row-1, col]==15){tilePrefab=tile16;}
                 GameObject tile = Instantiate(tilePrefab, position, Quaternion.identity, transform);
-
-                // Store the tile in the array
                 tileArray[row, col] = tile;
             }
         }
