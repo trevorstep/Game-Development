@@ -7,8 +7,7 @@ public class TankShoot : MonoBehaviour
     {
         if(Input.GetKeyDown("mouse 0"))
         {
-            //Test to see of function returns true when primary button on mouse is clicked
-            Debug.Log("Mouse was clicked");
+            Console.Log("Mouse was clicked");
         }
     }
 }
