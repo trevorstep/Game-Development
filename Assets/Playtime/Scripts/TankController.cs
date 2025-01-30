@@ -1,29 +1,67 @@
 using UnityEngine;
-using System.Collections;
-public class TankController : MonoBehaviour 
+
+public class PlayerMovement : MonoBehaviour
 {
-    void start(){
-        transform.position = new Vector3(-2,-1,0); //this should be changed later to take the vector3 of an empty spawn point
+    public float rotationSpeed = 300f;
+    public float moveSpeed = 5f;
+    private Vector2 movementDirection;
+    private bool isRotating = false;
+    private bool isMoving = false;
+
+    void Update()
+    {
+        GetInput();
+        if (isMoving)
+        {
+            RotateTowardsMovementDirection();
+        }
     }
-    void Update(){
-        if(Input.GetKeyDown("Left")){
-            //start rotating the tank towards the West
-        }
 
-        if(Input.GetKeyDown("Right")){
-            //start rotating the tank towards the East
+    void FixedUpdate()
+    {
+        if (!isRotating && isMoving)
+        {
+            Move();
         }
+    }
 
-        if(Input.GetKeyDown("Up")){
-            //start rotating the tank towards the North
-        }
+    void GetInput()
+    {
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
 
-        if(Input.GetKeyDown("Down")){
-            //start rotating the tank towards the South
+        if (horizontal != 0 || vertical != 0)
+        {
+            movementDirection = new Vector2(horizontal, vertical).normalized;
+            isMoving = true;
         }
+        else
+        {
+            isMoving = false;
+        }
+    }
 
-        if(Input.GetKeyDown("G")){
-            //use G key to go forward
+    void RotateTowardsMovementDirection()
+    {
+        if (movementDirection != Vector2.zero)
+        {
+            float targetAngle = Mathf.Atan2(movementDirection.y, movementDirection.x) * Mathf.Rad2Deg;
+            float angle = Mathf.MoveTowardsAngle(transform.eulerAngles.z, targetAngle, rotationSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Euler(0f, 0f, angle);
+            
+            if (Mathf.Abs(Mathf.DeltaAngle(transform.eulerAngles.z, targetAngle)) < 1f)
+            {
+                isRotating = false;
+            }
+            else
+            {
+                isRotating = true;
+            }
         }
+    }
+
+    void Move()
+    {
+        transform.position += (Vector3)movementDirection * moveSpeed * Time.fixedDeltaTime;
     }
 }
