@@ -7,7 +7,7 @@ public class TankShoot : MonoBehaviour
     {
         if(Input.GetKeyDown("mouse 0"))
         {
-            Console.Log("Mouse was clicked");
+            Debug.Log("Mouse was clicked");
         }
     }
 }
