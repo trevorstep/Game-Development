@@ -3,16 +3,18 @@ using System.Collections;
 
 public class TankShoot : MonoBehaviour
 {
+    public GameObject projectile;
+    public float speed;
     void Update() 
     {
-
-        if(Input.GetKeyDown("mouse 0"))
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 direction=mousePosition - transform.position;
+        GameObject bullet=null;
+        if(Input.GetMouseButtonDown(0))
         {
-            Vector3 mouseposition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            Vector3 direction = mousePosition - transform.position;
-
-            
+            bullet = Instantiate(projectile,transform);   
+            bullet.GetComponent<bulletlife>().speed = speed;
+            bullet.GetComponent<bulletlife>().direction = direction;
         }
     }
 }
