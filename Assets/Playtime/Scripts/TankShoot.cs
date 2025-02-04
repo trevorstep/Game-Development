@@ -7,16 +7,14 @@ public class TankShoot : MonoBehaviour
     public float speed;
     void Update() 
     {
-        Vector3 direction=new Vector3(0,0,0);
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 direction=mousePosition - transform.position;
         GameObject bullet=null;
-        if(Input.GetKeyDown("mouse 0"))
+        if(Input.GetMouseButtonDown(0))
         {
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            direction = mousePosition - transform.position;
-            bullet = Instantiate(projectile, transform.position, Quaternion.identity, transform);            
-        }
-        if(bullet!=null){
-            bullet.transform.position += speed*(direction)/100f;
+            bullet = Instantiate(projectile,transform);   
+            bullet.GetComponent<bulletlife>().speed = speed;
+            bullet.GetComponent<bulletlife>().direction = direction;
         }
     }
 }
