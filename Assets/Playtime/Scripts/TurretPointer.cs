@@ -14,7 +14,7 @@ public class TurretPointer : MonoBehaviour
         direction.z = 0;
 
         // Calculate the angle to rotate the sprite
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg-90;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg+90;
 
         // Apply the rotation to the sprite
         transform.rotation = Quaternion.Euler(0f, 0f, angle);
