@@ -13,7 +13,6 @@ public class TankShoot : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             bullet = Instantiate(projectile,transform.position,transform.rotation);   
-            bullet.GetComponent<bulletlife>().speed = speed;
         }
     }
 }
