@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      green_tank_body_4_0: 6909884035884849697
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
