@@ -45,7 +45,7 @@ public class TankController : MonoBehaviour
     {
         if (movementDirection != Vector2.zero)
         {
-            float targetAngle = Mathf.Atan2(movementDirection.y, movementDirection.x) * Mathf.Rad2Deg;
+            float targetAngle = Mathf.Atan2(movementDirection.y, movementDirection.x) * Mathf.Rad2Deg+90;
             float angle = Mathf.MoveTowardsAngle(transform.eulerAngles.z, targetAngle, rotationSpeed * Time.deltaTime);
             transform.rotation = Quaternion.Euler(0f, 0f, angle);
             
