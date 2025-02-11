@@ -7,11 +7,13 @@ public class TankInfo
 
     void Update()
     {
-        /*if (playerHealth > maxHealth)
+        //Ensures player health does not exceed the starting health
+        if (playerHealth > maxHealth)
         {
             playerHealth = maxHealth;
-        }*/
+        }
 
+        
         
     }
 }
