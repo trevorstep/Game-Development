@@ -8,7 +8,7 @@ public class bulletlife : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.linearVelocity = transform.up * speed; // Moves the object in the up direction (relative to its rotation)
+        rb.linearVelocity = transform.up * speed*-1; // Moves the object in the up direction (relative to its rotation)
         Destroy(gameObject, 3f); // Destroys the object after 3 seconds
     }
 
