@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TankInfo
+public class TankInfo : MonoBehaviour
 {
     public int maxHealth = 100;
     public int playerHealth;
