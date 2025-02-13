@@ -11,8 +11,12 @@ public class bulletlife : MonoBehaviour
         rb.linearVelocity = transform.up * speed*-1; // Moves the object in the up direction (relative to its rotation)
         Destroy(gameObject, 3f);    
     }
-    void OnCollisionEnter2D(Collision2D other){
-        if(other.gameObject.CompareTag("Wall") ){
+    void OnTriggerEnter2D(Collider2D other){
+        if(other.tag == "Player"){
+            Debug.Log("Player");
+        }
+        if(other.tag == "Wall"){
+            Debug.Log("Wall");
             Destroy(gameObject);
         }
     }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TileArrayGenerator : MonoBehaviour
+public class MapRender : MonoBehaviour
 {
     [Header("Tile Prefabs")]
     public GameObject tile1;
@@ -30,7 +30,7 @@ public class TileArrayGenerator : MonoBehaviour
     void Start()
     {   
         GenerateDefaultMapData();
-        mapData = GetComponent<MapData>().map4;
+        mapData = GetComponent<MapData>().map5;
         rows = mapData.GetLength(0);
         columns = mapData.GetLength(1);
         GenerateTileArray();
