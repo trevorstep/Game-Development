@@ -30,7 +30,7 @@ public class MapRender : MonoBehaviour
     void Start()
     {   
         GenerateDefaultMapData();
-        mapData = GetComponent<MapData>().map5;
+        mapData = GetComponent<MapData>().map4;
         rows = mapData.GetLength(0);
         columns = mapData.GetLength(1);
         GenerateTileArray();

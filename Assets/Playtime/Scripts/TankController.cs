@@ -7,6 +7,55 @@ public class TankController : MonoBehaviour
     private Vector2 movementDirection;
     private bool isRotating = false;
     private bool isMoving = false;
+    public GameObject startup;
+    public string spawnPointName = "SpawnPoint"; // Name of the spawn point
+
+    void Start()
+    {
+        Spawn();
+    }
+
+    void Spawn()
+    {
+        // Find the Startup object using its name
+
+        if (startup == null)
+        {
+            Debug.LogError("Startup object not found!");
+            return; // Exit early to prevent further errors
+        }
+
+        // Find the SpawnPoint using a recursive search
+        Transform spawnPointTransform = FindChildRecursive(startup.transform, spawnPointName);
+
+        if (spawnPointTransform == null)
+        {
+            Debug.LogError("SpawnPoint not found!");
+            return; // Exit early
+        }
+
+        transform.position = spawnPointTransform.position;
+    }
+
+    // Recursive function to find a child by name
+    Transform FindChildRecursive(Transform parent, string name)
+    {
+        foreach (Transform child in parent)
+        {
+            if (child.name == name)
+            {
+                return child;
+            }
+
+            Transform found = FindChildRecursive(child, name);
+            if (found != null)
+            {
+                return found;
+            }
+        }
+        return null; // Not found
+    }
+
 
     void Update()
     {
@@ -45,10 +94,10 @@ public class TankController : MonoBehaviour
     {
         if (movementDirection != Vector2.zero)
         {
-            float targetAngle = Mathf.Atan2(movementDirection.y, movementDirection.x) * Mathf.Rad2Deg+90;
+            float targetAngle = Mathf.Atan2(movementDirection.y, movementDirection.x) * Mathf.Rad2Deg + 90;
             float angle = Mathf.MoveTowardsAngle(transform.eulerAngles.z, targetAngle, rotationSpeed * Time.deltaTime);
             transform.rotation = Quaternion.Euler(0f, 0f, angle);
-            
+
             if (Mathf.Abs(Mathf.DeltaAngle(transform.eulerAngles.z, targetAngle)) < 1f)
             {
                 isRotating = false;
