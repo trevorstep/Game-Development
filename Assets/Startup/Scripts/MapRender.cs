@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TileArrayGenerator : MonoBehaviour
+public class MapRender : MonoBehaviour
 {
     [Header("Tile Prefabs")]
     public GameObject tile1;

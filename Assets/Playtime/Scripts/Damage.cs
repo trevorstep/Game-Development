@@ -5,7 +5,7 @@ public class Damage : MonoBehaviour
     public int damage = 10;
     private TankInfo player;
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {

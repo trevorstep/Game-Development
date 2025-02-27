@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8461778804614055076}
   - component: {fileID: 3013214618723430175}
   m_Layer: 0
-  m_Name: Floor
+  m_Name: Team1Spawn
   m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 22ac2b66f8a584575be6b744c2de19e8, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9716981, g: 0.51306504, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
