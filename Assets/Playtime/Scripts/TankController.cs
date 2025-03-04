@@ -117,13 +117,14 @@ public class TankController : MonoBehaviour
     }
 
     public float relativeDistance(){
-        if(checkDist=0){
+        if(checkDist==0){
             prevPosition=transform.position;
         }else if(checkDist==10){
             return transform.position - prevPosition;
         }
 
         checkDist++;
+        return null;
         
     }
 }
