@@ -5,49 +5,96 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     public float moveSpeed = 3f;
-    public float detectionRange = 10f;
-    public float avoidanceDistance = 1f;
-    public LayerMask obstacleLayer;
-    
-    private Transform player;
+    public float rotationSpeed = 300f;
+    private bool isRotating = false;
+    private bool isMoving = true;
     private Rigidbody2D rb;
-    
+    private bool ignoreCollisions = false;
+    private Vector2 movementDirection = Vector2.up; // Initialize to forward
+
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        if (player == null)
-            return;
-
-        Vector2 direction = (player.position - transform.position).normalized;
-        Vector2 newDirection = AvoidObstacles(direction);
-        rb.linearVelocity = direction * moveSpeed;
-    }
-
-    Vector2 AvoidObstacles(Vector2 targetDirection)
-    {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, targetDirection, detectionRange, obstacleLayer);
-        
-        if (hit.collider != null)
+        if (isMoving)
         {
-            Vector2 perpendicular = Vector2.Perpendicular(hit.normal);
-            Vector2 alternateDirection = Vector2.Dot(perpendicular, targetDirection) > 0 ? perpendicular : -perpendicular;
-            return alternateDirection;
+            Move();
         }
-        
-        return targetDirection;
+        if (isRotating)
+        {
+            RotateTowardsMovementDirection();
+        }
     }
 
-    void OnDrawGizmos()
+    void OnCollisionEnter2D(Collision2D collision)
     {
+        if (!ignoreCollisions && collision.collider.CompareTag("Wall"))
+        {
+            ChooseRightDirection();
+            StartCoroutine(IgnoreCollisionsForTime(0.1f));
+        }
+    }
+
+    IEnumerator IgnoreCollisionsForTime(float time)
+    {
+        ignoreCollisions = true;
+        yield return new WaitForSeconds(time);
+        ignoreCollisions = false;
+    }
+
+    void RotateTowardsMovementDirection()
+    {
+        if (movementDirection != Vector2.zero)
+        {
+            float targetAngle = Mathf.Atan2(movementDirection.y, movementDirection.x) * Mathf.Rad2Deg + 90;
+            float angle = Mathf.MoveTowardsAngle(transform.eulerAngles.z, targetAngle, rotationSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Euler(0f, 0f, angle);
+
+            if (Mathf.Abs(Mathf.DeltaAngle(transform.eulerAngles.z, targetAngle)) < 1f)
+            {
+                isMoving = true;
+                isRotating = false;
+            }
+            else
+            {
+                isRotating = true;
+                isMoving = false;
+            }
+        }
+    }
+
+    void Move()
+    {
+        transform.position += transform.up * moveSpeed * Time.fixedDeltaTime;
+    }
+
+    void ChooseRightDirection()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player"); // Assuming your player has the "Player" tag
+
         if (player != null)
         {
-            Gizmos.color = Color.red;
-            Gizmos.DrawLine(transform.position, transform.position + (Vector3)(AvoidObstacles((player.position - transform.position).normalized) * detectionRange));
+            Vector2 playerPosition = player.transform.position;
+            Vector2 enemyPosition = transform.position;
+            Vector2 directionToPlayer = playerPosition - enemyPosition;
+
+            // Calculate the relative forward vector of the enemy
+            Vector2 enemyForward = transform.up;
+
+            // Calculate the cross product to determine left or right
+            float crossProduct = Vector3.Cross(enemyForward, directionToPlayer).z;
+
+            if (crossProduct > 0) // Player is to the left
+            {
+                movementDirection = -transform.right; // Move left
+            }
+            else // Player is to the right or directly behind
+            {
+                movementDirection = transform.right; // Move right
+            }
         }
     }
 }

@@ -9,6 +9,8 @@ public class TankController : MonoBehaviour
     private bool isMoving = false;
     public GameObject startup;
     public string spawnPointName = "SpawnPoint"; // Name of the spawn point
+    private int checkDist=0;
+    private Vector3 prevPosition;
 
     void Start()
     {
@@ -112,5 +114,16 @@ public class TankController : MonoBehaviour
     void Move()
     {
         transform.position += (Vector3)movementDirection * moveSpeed * Time.fixedDeltaTime;
+    }
+
+    public float relativeDistance(){
+        if(checkDist=0){
+            prevPosition=transform.position;
+        }else if(checkDist==10){
+            return transform.position - prevPosition;
+        }
+
+        checkDist++;
+        
     }
 }
