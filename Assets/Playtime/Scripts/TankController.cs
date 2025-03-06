@@ -9,8 +9,6 @@ public class TankController : MonoBehaviour
     private bool isMoving = false;
     public GameObject startup;
     public string spawnPointName = "SpawnPoint"; // Name of the spawn point
-    private int checkDist=0;
-    private Vector3 prevPosition;
 
     void Start()
     {
@@ -96,9 +94,10 @@ public class TankController : MonoBehaviour
     {
         if (movementDirection != Vector2.zero)
         {
-            float targetAngle = Mathf.Atan2(movementDirection.y, movementDirection.x) * Mathf.Rad2Deg + 90;
+            float targetAngle = Mathf.Atan2(movementDirection.y, movementDirection.x) * Mathf.Rad2Deg+90;
             float angle = Mathf.MoveTowardsAngle(transform.eulerAngles.z, targetAngle, rotationSpeed * Time.deltaTime);
             transform.rotation = Quaternion.Euler(0f, 0f, angle);
+            
 
             if (Mathf.Abs(Mathf.DeltaAngle(transform.eulerAngles.z, targetAngle)) < 1f)
             {
@@ -114,17 +113,5 @@ public class TankController : MonoBehaviour
     void Move()
     {
         transform.position += (Vector3)movementDirection * moveSpeed * Time.fixedDeltaTime;
-    }
-
-    public float relativeDistance(){
-        if(checkDist==0){
-            prevPosition=transform.position;
-        }else if(checkDist==10){
-            return transform.position - prevPosition;
-        }
-
-        checkDist++;
-        return null;
-        
     }
 }

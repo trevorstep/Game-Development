@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
@@ -7,7 +8,7 @@ public class HealthBar : MonoBehaviour
 
     public void SetMaxHealth(int health)
     {
-        slider.MaxValue = health;
+        slider.maxValue = health;
         slider.value = health;
     }
 
