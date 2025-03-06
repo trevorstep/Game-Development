@@ -3,26 +3,22 @@ using UnityEngine;
 public class TankInfo : MonoBehaviour
 {
     public int maxHealth = 100;
-    public int playerHealth;
-
+    public int currentHealth;
     void Start()
     {
-        playerHealth = maxHealth;
+        currentHealth = maxHealth;
     }
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TakeDamage(20);
+        }
     }
 
-    public void TakeDamage(int amount)
+    void TakeDamage(int damage)
     {
-        playerHealth -= amount;
-
-        if (playerHealth <= 0)
-        {
-            Destroy(gameObject);
-        }
-
+        currentHealth -= damage;
     }
 
 
