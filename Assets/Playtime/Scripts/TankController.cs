@@ -4,6 +4,7 @@ public class TankController : MonoBehaviour
 {
     public float rotationSpeed = 300f;
     public float moveSpeed = 5f;
+    public float speed = 1f; // this is needed for the tank tracks animation. sorry.
     private Vector2 movementDirection;
     private bool isRotating = false;
     private bool isMoving = false;
@@ -83,10 +84,12 @@ public class TankController : MonoBehaviour
         {
             movementDirection = new Vector2(horizontal, vertical).normalized;
             isMoving = true;
+            // speed = moveSpeed;
         }
         else
         {
             isMoving = false;
+            // speed = 0f;
         }
     }
 
