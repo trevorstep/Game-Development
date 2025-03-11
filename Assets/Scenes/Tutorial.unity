@@ -505,7 +505,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -784,6 +784,11 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0.01256148, y: 0}
   m_Radius: 0.88696116
+--- !u!4 &1672377360 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1069179812983130598, guid: c0d2e27603f8c44f7b467c9711057356, type: 3}
+  m_PrefabInstance: {fileID: 1696866175}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1696866175
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -926,11 +931,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1069179812983130598, guid: c0d2e27603f8c44f7b467c9711057356, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.82
+      value: 1.83
       objectReference: {fileID: 0}
     - target: {fileID: 1069179812983130598, guid: c0d2e27603f8c44f7b467c9711057356, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.45
+      value: 2.09
       objectReference: {fileID: 0}
     - target: {fileID: 1069179812983130598, guid: c0d2e27603f8c44f7b467c9711057356, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1095,7 +1100,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
-  rotationSpeed: 1
+  rotationSpeed: 20
+  targetDistance: 10
+  player: {fileID: 1672377360}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
