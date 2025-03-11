@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TankInfo : MonoBehaviour
 {
-    public int maxHealth = 100;
+    public int maxHealth = 3;
     public int currentHealth;
     void Start()
     {
@@ -12,7 +12,7 @@ public class TankInfo : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            TakeDamage(20);
+            TakeDamage(1);
         }
     }
 
