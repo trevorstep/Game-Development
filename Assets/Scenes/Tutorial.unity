@@ -119,6 +119,33 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &48402727 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3816062444738261010, guid: c0d2e27603f8c44f7b467c9711057356, type: 3}
+  m_PrefabInstance: {fileID: 1897316944}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &48402728 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 649836614240724548, guid: c0d2e27603f8c44f7b467c9711057356, type: 3}
+  m_PrefabInstance: {fileID: 1897316944}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &48402730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48402727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46582c3f155d74053b4c28ecfdc8c249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 50
+  firingRange: 10
+  player: {fileID: 1672377360}
+  projectilePrefab: {fileID: 3902001683372605766, guid: 02cf7fc903a4147d092615f65271f078, type: 3}
+  firePoint: {fileID: 48402728}
 --- !u!1 &159122649
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,6 +1046,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4013220803199916416, guid: c0d2e27603f8c44f7b467c9711057356, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1897316954}
+    - targetCorrespondingSourceObject: {fileID: 3816062444738261010, guid: c0d2e27603f8c44f7b467c9711057356, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 48402730}
   m_SourcePrefab: {fileID: 100100000, guid: c0d2e27603f8c44f7b467c9711057356, type: 3}
 --- !u!1 &1897316945 stripped
 GameObject:
@@ -1100,8 +1130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a174963cec4904316a2b34927624b8f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
-  rotationSpeed: 20
+  moveSpeed: 3
+  rotationSpeed: 50
   targetDistance: 10
   player: {fileID: 1672377360}
 --- !u!1660057539 &9223372036854775807

@@ -51,7 +51,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (!wall)
         {
-            transform.position += transform.up * moveSpeed * 0.1f * Time.fixedDeltaTime;
+            transform.position += transform.up * moveSpeed * -0.1f * Time.fixedDeltaTime;
         }
         else
         {
