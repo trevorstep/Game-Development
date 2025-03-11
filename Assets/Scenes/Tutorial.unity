@@ -268,9 +268,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 10
+  m_MaxValue: 3
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: 3
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d84f801cd86a946d69bf18b941fedd02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}
+  slider: {fileID: 159122655}
 --- !u!1 &327705446
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,8 +583,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -144.8883, y: -178.78094}
-  m_SizeDelta: {x: 5.302, y: -292.5703}
+  m_AnchoredPosition: {x: -23, y: -1}
+  m_SizeDelta: {x: -139.5051, y: -292.5703}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &968632154
 MonoBehaviour:
@@ -719,6 +719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 300
   moveSpeed: 5
+  speed: 1
   startup: {fileID: 1141983131}
   spawnPointName: SpawnPoint(Clone)
 --- !u!50 &1672377354
