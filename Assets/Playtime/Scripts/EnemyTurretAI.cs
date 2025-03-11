@@ -59,7 +59,7 @@ public class EnemyTurretAI : MonoBehaviour
     IEnumerator FireCooldown()
     {
         // Wait for a short period before allowing another shot
-        yield return new WaitForSeconds(1f); // Adjust the cooldown time as needed
+        yield return new WaitForSeconds(3f); // Adjust the cooldown time as needed
         isFiring = false;
     }
 }
