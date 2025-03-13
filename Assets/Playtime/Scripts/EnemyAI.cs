@@ -135,7 +135,7 @@ public class EnemyAI : MonoBehaviour
         // If rotating counterclockwise, add 180 degrees (if needed)
         if (rotationDirection == -1)
         {
-            targetRotation += 180f;
+            targetRotation += 0f;
         }
 
         // Ensure the target angle is between 0 and 360

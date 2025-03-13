@@ -10,10 +10,13 @@ public class TankController : MonoBehaviour
     private bool isMoving = false;
     public GameObject startup;
     public string spawnPointName = "SpawnPoint"; // Name of the spawn point
+    public HealthBar health;
 
     void Start()
     {
         Spawn();
+        health.SetMaxHealth(100);
+
     }
 
     void Spawn()
@@ -73,6 +76,9 @@ public class TankController : MonoBehaviour
         {
             Move();
         }
+        if(health.GetHealth()<=0){
+            Destroy(gameObject);
+        }
     }
 
     void GetInput()
@@ -116,5 +122,10 @@ public class TankController : MonoBehaviour
     void Move()
     {
         transform.position += (Vector3)movementDirection * moveSpeed * Time.fixedDeltaTime;
+    }
+    void OnTriggerEnter2D(Collider2D obj){
+        if (obj.gameObject.tag == "EnemyBullet"){
+            health.IncrementHealth(15, true);
+        }
     }
 }
