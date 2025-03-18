@@ -19,12 +19,12 @@ public class Menu : MonoBehaviour
 
     void StartGame()
     {
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("Game");
     }
 
     void OpenOptions()
     {
-
+        SceneManager.LoadScene("Options");
     }
 
     void Quit()
