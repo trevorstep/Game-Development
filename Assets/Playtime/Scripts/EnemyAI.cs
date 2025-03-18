@@ -162,7 +162,7 @@ public class EnemyAI : MonoBehaviour
         }
     }
     void OnTriggerEnter2D(Collider2D obj){
-        if (obj.gameObject.tag == "Bullet"){
+        if (obj.gameObject.tag == "PlayerBullet"){
             health.IncrementHealth(15, true);
         }
     }
