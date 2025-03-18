@@ -26,7 +26,7 @@ public class TankInfo : MonoBehaviour
 
         healthBar.SetHealth(currentHealth);
     }
-
+#fix
     public void ChangeHealth(int amount)
     {
         currentHealth += amount;
