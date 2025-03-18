@@ -15,12 +15,14 @@ public class EnemyAI : MonoBehaviour
     public float targetDistance = 10;
     private float targetRotationAngle = 0f; // Store the target rotation angle
     private bool isRotating = false; // Flag to check if the object is rotating
+    public HealthBar health;
 
     public Transform player;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        health.SetHealth(100);
     }
 
     void Update()
@@ -157,6 +159,11 @@ public class EnemyAI : MonoBehaviour
         else
         {
             isRotating = true;
+        }
+    }
+    void OnTriggerEnter2D(Collider2D obj){
+        if (obj.gameObject.tag == "PlayerBullet"){
+            health.IncrementHealth(15, true);
         }
     }
 }
