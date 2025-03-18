@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class TankInfo : MonoBehaviour
 {
@@ -26,5 +27,10 @@ public class TankInfo : MonoBehaviour
         healthBar.SetHealth(currentHealth);
     }
 
+    public void ChangeHealth(int amount)
+    {
+        currentHealth += amount;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+    }
 
 }
