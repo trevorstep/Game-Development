@@ -780,7 +780,7 @@ MonoBehaviour:
   speed: 1
   startup: {fileID: 1141983131}
   spawnPointName: SpawnPoint(Clone)
-  health: {fileID: 159122656}
+  health: {fileID: 0}
 --- !u!50 &1672377354
 Rigidbody2D:
   serializedVersion: 5
@@ -849,6 +849,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1069179812983130598, guid: c0d2e27603f8c44f7b467c9711057356, type: 3}
   m_PrefabInstance: {fileID: 1696866175}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1672377362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672377349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc438945ea4b24d37b3639398c641397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
+  currentHealth: 0
+  healthBar: {fileID: 159122656}
 --- !u!1001 &1696866175
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -961,6 +976,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4013220803199916416, guid: c0d2e27603f8c44f7b467c9711057356, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1672377358}
+    - targetCorrespondingSourceObject: {fileID: 4013220803199916416, guid: c0d2e27603f8c44f7b467c9711057356, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1672377362}
     - targetCorrespondingSourceObject: {fileID: 3816062444738261010, guid: c0d2e27603f8c44f7b467c9711057356, type: 3}
       insertIndex: -1
       addedObject: {fileID: 555225594}
