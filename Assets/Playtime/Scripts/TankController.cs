@@ -9,7 +9,7 @@ public class TankController : MonoBehaviour
     private bool isRotating = false;
     private bool isMoving = false;
     public GameObject startup;
-    public string spawnPointName = "SpawnPoint"; // Name of the spawn point
+    public string spawnPointName = "SpawnPoint(Clone)"; // Name of the spawn point
     public HealthBar health;
 
     void Start()

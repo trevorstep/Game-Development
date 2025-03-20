@@ -8,6 +8,7 @@ TagManager:
   - Background
   - Enemy
   - EnemyBullet
+  - PlayerBullet
   - Undefined
   layers:
   - Default

@@ -39,6 +39,9 @@ public class EnemyAI : MonoBehaviour
         {
             target = player;
         }
+        if(health.GetHealth()<=0){
+            Destroy(gameObject);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
