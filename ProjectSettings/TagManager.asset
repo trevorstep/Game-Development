@@ -10,15 +10,18 @@ TagManager:
   - EnemyBullet
   - PlayerBullet
   - Undefined
+  - Tank
+  - Tank2
+  - Backround smoke
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Smoke
   - Water
   - UI
-  - 
-  - 
+  - MiniMap
+  - Tank
   - 
   - 
   - 
@@ -61,6 +64,9 @@ TagManager:
     locked: 0
   - name: Overhang Level
     uniqueID: 4015956409
+    locked: 0
+  - name: Tank
+    uniqueID: 882025295
     locked: 0
   m_RenderingLayers:
   - Default
