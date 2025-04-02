@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TankController : MonoBehaviour
 {
@@ -78,6 +79,7 @@ public class TankController : MonoBehaviour
         }
         if(health.GetHealth()<=0){
             Destroy(gameObject);
+            SceneManager.LoadScene("NewMainMenu", LoadSceneMode.Single);
         }
     }
 
