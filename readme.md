@@ -23,7 +23,7 @@ Instructions for using the software:
 ## Software Features
 
 ## Project Management
-What we accomplished this project [GitHub Projects Board](https://github.com/users/trevorstep/projects/3).
+What we accomplished this project: [GitHub Projects Board](https://github.com/users/trevorstep/projects/3).
 
 
 ## Team Communication
