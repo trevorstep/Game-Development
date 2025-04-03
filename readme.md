@@ -36,8 +36,9 @@ What went well:
 - Code & debug went quick
 - communicate pretty well
   
-What didn't go so well
+What didn't go so well:
 - Unity & GitHub had issues
+- Would have been nice to have a github tutorial at the beginning
 - We had to proritize features and the scope of the project due to time constraints
 - time management was a common difficulty
 
