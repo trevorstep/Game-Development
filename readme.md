@@ -36,6 +36,9 @@ What went well:
 - Of the features we added, things worked
 - Code & debug went quick
 - communicate pretty well
+  
 What didn't go so well
 - Unity & GitHub had issues
 - We had to proritize features and the scope of the project due to time constraints
+- time management was a common difficulty
+
