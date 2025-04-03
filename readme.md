@@ -21,13 +21,21 @@ Instructions for using the software:
 3. All other things, like menu items, are point and click based.
 
 ## Software Features
+- runs on any computer that can run unity
+- uses intuitive controls
+- will exit game when you lose :(
+- AI Enemies
+- Simple Map Generation
+- Great sound design
 
 ## Project Management
 What we accomplished this project: [GitHub Projects Board](https://github.com/users/trevorstep/projects/3).
 
-
-## Team Communication
-
-## Team Responsibilities
-
 ## Reflections
+What went well:
+- Of the features we added, things worked
+- Code & debug went quick
+- communicate pretty well
+What didn't go so well
+- Unity & GitHub had issues
+- We had to proritize features and the scope of the project due to time constraints
