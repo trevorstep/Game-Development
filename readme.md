@@ -12,7 +12,6 @@ Steps to build and/or run the software:
 
 1. Open the project in Unity
 2. Hit the Play Button at the top middle
-3.
 
 Instructions for using the software:
 
