@@ -2,9 +2,9 @@
 
 **Project Title**: Tank Game
 
-**Project Description**: A knockoff of the Wii Tanks game for the Nintendo Wii
+**Team Members**: Adam Sandland, 
 
-**Project Goals**: To create a functioning game where you have to eliminate the enemy tanks before you are eliminated.
+**Project Description**: A knockoff of the Wii Tanks game for the Nintendo Wii. When entering a game, you have to eliminate the enemy tanks before you are eliminated. Otherwise, you must restart.
 
 ## Instructions for Build and Use
 
@@ -20,25 +20,10 @@ Instructions for using the software:
 2. You can control the direction of the turret with a mouse position. Fire with click
 3. All other things, like menu items, are point and click based.
 
-## Development Environment 
+## Software Features
 
-To recreate the development environment, you need the following software and/or libraries with the specified versions:
+## Team Communication
 
-* Unity Hub
-* Unity
-* Code editor (we used Visual Studio)
+## Team Responsibilities
 
-## Useful Websites to Learn More
-
-I found these websites useful in developing this software:
-
-* [Unity Documentation](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/SceneManagement.SceneManager.LoadScene.html)
-* [ChatGPT (for debugging)](chat.openai.com)
-
-## Future Work
-
-The following items I plan to fix, improve, and/or add to this project in the future:
-
-* [ ] A wave based system
-* [ ] Healing items
-* [ ] Other various tiles
+## Reflections
